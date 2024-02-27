@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "EffectOneKit",
             dependencies: ["EffectOneKitTarget"],
-            path: "Source"
+            path: "Sources/EffectOneKit"
         )
     ]
 )
