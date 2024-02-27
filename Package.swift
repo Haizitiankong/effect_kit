@@ -4,10 +4,10 @@
 import PackageDescription
 
 let package = Package(
-    name: "EffectOneKitTest",
+    name: "EffectOneKitSDK",
     platforms: [.iOS(.v13)],
     products: [
-        .library(name: "EffectOneKitTest", targets: ["EffectOneKitTest"]),
+        .library(name: "EffectOneKitSDK", targets: ["EffectOneKitSDK"]),
     ],
     dependencies: [
     ],
@@ -18,7 +18,7 @@ let package = Package(
             checksum: "e215bc1b4e8e7c9354e519f4a34276189e2a147f8cb0d93256b1702db60ca249"
         ),
         .target(
-            name: "EffectOneKitTest",
+            name: "EffectOneKitSDK",
             dependencies: ["EffectOneKit"],
             path: "Source",
             publicHeadersPath: ""
