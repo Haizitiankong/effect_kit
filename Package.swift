@@ -4,29 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "EffectOneKit",
-    platforms: [
-        .iOS(.v13) // 适用的 iOS 版本
-    ],
-    products: [
-        .library(
-            name: "EffectOneKit",
-            targets: ["EffectOneKit"]
-        ),
-    ],
-    dependencies: [
-    ],
-    targets: [
-        .binaryTarget(
-            name: "EffectOneKitTarget",
-            url: "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/EffectOneKit/0.2.0-EO/EffectOneKit.xcframework.zip",
-            checksum: "e215bc1b4e8e7c9354e519f4a34276189e2a147f8cb0d93256b1702db60ca249"
-        ),
-        .target(
-            name: "EffectOneKit",
-            dependencies: ["EffectOneKitTarget"],
-            path: "Sources/EffectOneKit"
-        )
-    ]
+  name: "EffectOneKitTest",
+  platforms: [.iOS(.v13)],
+  products: [
+    .library(name: "EffectOneKitTest", targets: ["EffectOneKitTest"]),
+  ],
+  dependencies: [
+    .package(url: "https://github.com/Haizitiankong/effect_test_one.git", exact: "1.0.0")
+  ],
+  targets: [
+    .target(
+      name: "EffectOneKitTest",
+      dependencies: [.product(name: "EffectOneKit", package: "effect_test_one")],
+      path: "Source",
+      publicHeadersPath: ""
+    )
+  ]
 )
-
